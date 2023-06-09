@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona glowna</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<script>
+    function witaj(){
+      var imienau = document.getElementById("imie").value;
+      var container = document.getElementById("content");
+      var inputy = container.getElementsByTagName("input");
+      var h1 = container.getElementsByTagName("h1");
+
+      container.removeChild(h1[0]);
+      while (inputy.length > 0) {
+        container.removeChild(inputy[0]);
+      }
+
+      let nowyh1 = document.createElement("h1");
+      let nowyguzik1 = document.createElement("button");
+      let nowyguzik2 = document.createElement("button");
+
+      nowyh1.innerHTML = "Witaj " + imienau + ", co chcesz teraz zrobic?";
+      nowyguzik1.innerHTML = "Chce wejsc do dziennika";
+      nowyguzik2.innerHTML = "Chce naprawic prawdziwego librusa zeby dzialal i mial podstawowe funkcje ktore powinien miec kazdy dziennik np. ZDOLNOSC DO SPRAWDZENIA SREDNIEJ UCZNIA";
+    
+      container.appendChild(nowyh1);
+      container.appendChild(nowyguzik1);
+      container.appendChild(nowyguzik2);
+
+      nowyguzik1.addEventListener("click", function() {
+        window.location.href = "uczniowie.html";
+      });
+
+      nowyguzik2.addEventListener("click", function() {
+        alert("xd nie no zart tylko");
+      });
+    }
+</script>
+<body>
+    <div class="nav2"></div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav1">
+        <div class="container-fluid">
+          <img class="navbar-brand" src="librus-logo.png">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <a href="main.html">
+                <li class="nav-item">
+                  <img class="icons" src="home.png">
+                  <a class="nav-link active" aria-current="page" href="main.html">STRONA GLOWNA</a>
+                </li>
+              </a>
+              <a href="uczniowie.html">
+                <li class="nav-item">
+                  <img class="icons" src="clipboard.png">
+                  <a class="nav-link active" aria-current="page" href="uczniowie.html">DZIENNIK</a>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div id="content" class="content">
+      <h1>Podaj imie nauczyciela:</h1>
+      <input type="text" id="imie">
+      <input type="submit" onclick="witaj()">
+    </div>
+
+    <footer class="footer bg-light">
+      <div class="container text-center">
+        <span class="text-muted">2023 LIBRUS wersja 2.0</span>
+      </div>
+    </footer>
+</body>
+<style>
+    .nav1{
+        background-image: url(nav.jpg);
+    }
+
+    .nav2{
+        background-color: black;
+        height: 20px;
+        width: 100%;
+    }
+
+    .navbar-brand{
+        height: 75px;
+        width: 300px;
+        margin-left: 100px;
+    }
+
+    .nav-item{
+        border: 2px solid black;
+        background-color: antiquewhite;
+        border-radius: 10px;
+        margin-right: 30px;
+    }
+
+    .icons{
+        width: 50px;
+        height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .navbar-nav {
+      margin-left: auto;
+      margin-right: 100px;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh; 
+    }
+
+    .footer {
+      height: 60px; 
+    }
+
+    h1{
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    input{
+      margin: 0 auto;
+      display: block;
+      margin-top: 50px;
+      height: 50px;
+      width: 300px;
+    }
+
+    button{
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 4px;
+      background-color: #818181;
+      color: #fff;
+      margin-top: 15px;
+    }
+</style>
+</html>
